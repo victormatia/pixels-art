@@ -36,6 +36,7 @@ main {
 
 #color-palette {
     display: flex;
+    align-items: center;
 }
 
 #pixel-board {
@@ -56,5 +57,6 @@ main {
 .selected {
     /* position: relative; essa propriedade quebra o cod */
     bottom: 5px;
-
+    padding: 2px;
+    
 }

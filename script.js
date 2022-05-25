@@ -21,24 +21,39 @@ function setBlackFirst() { // seta a cor black com a classe selected
 setBlackFirst();
 
 //-----------------------------------------------------------------------------
-// function returnClickOnPalette() { // retorna qual cor foi clicada
-//   const wayToColor = document.querySelectorAll('.color');
 
-//   function returnTarget(eventClick) {
-//     console.log(eventClick.target)
-//   }
+const wayToColor = document.querySelectorAll('.color');
+const wayToBlack = document.getElementById('black');
+const wayToRed = document.getElementById('red');
+const wayToBlue = document.getElementById('blue');
+const wayToGreen = document.getElementById('green');
 
-//   for (let elemets of wayToColor) {
-//     elemets.addEventListener('click', returnTarget)
-//   }
+for (let colors of wayToColor) {
+  colors.addEventListener('click', function returnTarget(event) {
+    console.log(event.target.innerText);
+    if (event.target.innerText === 'red') {
+      event.target.classList.add('selected');
+      wayToBlack.classList.remove('selected');
+      wayToBlue.classList.remove('selected');
+      wayToGreen.classList.remove('selected');
+    } else if (event.target.innerText === 'blue') {
+      event.target.classList.add('selected');
+      wayToBlack.classList.remove('selected');
+      wayToRed.classList.remove('selected');
+      wayToGreen.classList.remove('selected');
+    } else if (event.target.innerText === 'green') {
+      event.target.classList.add('selected');
+      wayToBlack.classList.remove('selected');
+      wayToRed.classList.remove('selected');
+      wayToBlue.classList.remove('selected');
+    } else {
+      wayToBlack.classList.add('selected');
+      wayToGreen.classList.remove('selected');
+      wayToRed.classList.remove('selected');
+      wayToBlue.classList.remove('selected');
+    }
+  })
+}
 
-//   return returnTarget();
-// }
 
-// // returnClickOnPalette();
 
-// function changeColor(color) {
-//   color.classList.add('selected');
-// }
-
-// changeColor(returnClickOnPalette());

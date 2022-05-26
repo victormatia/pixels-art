@@ -1,3 +1,10 @@
+/* body {
+  background: rgba(0, 0, 0, 0.833) url(https://www.pixelstalk.net/wp-content/uploads/2016/04/Simple-wallpapers-HD-for-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+} */
+
 main {
   display: flex;
   align-items: center;
@@ -28,7 +35,7 @@ main {
   color: rgb(161, 161, 161);
   border: rgb(0, 0, 0) solid 1px;
   width: 50px;
-  height: 50px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,4 +64,10 @@ main {
 
 .selected {
   color: rgb(255, 255, 255);
+}
+
+#clear-board {
+  margin-top: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
 }

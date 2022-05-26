@@ -1,62 +1,60 @@
 main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #black {
-    background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
 }
 
 #red {
-    background-color: red;
+  background-color: rgb(255, 0, 0);
 }
 
 #blue {
-    background-color: blue;
+  background-color: rgb(0, 0, 255);
 }
 
 #green {
-    background-color: green;
+  background-color: rgb(0, 128, 0);
 }
 
 .color {
-    font-size: 14px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bolder;
-    color: rgb(161, 161, 161);
-    border: black solid 1px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  color: rgb(161, 161, 161);
+  border: rgb(0, 0, 0) solid 1px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #color-palette {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #pixel-board {
-    margin-top: 20px;
-    max-width: 210px;
-    max-height: 210px;
-    display: flex; /*flexbox <3*/
-    flex-wrap: wrap; /* essa propriedade faz com que tenha quebra de linha quando as divs chegarem a largura máxima do elemento pai. */
+  margin-top: 20px;
+  max-width: 210px;
+  max-height: 210px;
+  display: flex;
+  flex-wrap: wrap;
+  /* essa propriedade faz com que tenha quebra de linha quando as divs chegarem a largura máxima do elemento pai. */
 }
 
 .pixel {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: black solid 1px;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  border: rgb(0, 0, 0) solid 1px;
 }
 
 .selected {
-    /* position: relative; essa propriedade quebra o cod */
-    /* padding: 2px; */
-    color: white;
-    
+  color: rgb(255, 255, 255);
 }

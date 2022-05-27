@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -7,6 +8,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: darken;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #title {
@@ -39,7 +41,6 @@ main {
 
 .color {
   font-size: 14px;
-  font-family: 'Courier New', Courier, monospace;
   font-weight: bolder;
   color: rgb(161, 161, 161);
   border: rgb(0, 0, 0) solid 1px;
@@ -53,12 +54,36 @@ main {
 #color-palette {
   display: flex;
   align-items: center;
+  margin: 20px 0px 20px;
 }
 
 #pixel-board {
   margin-top: 20px;
   max-width: 210px;
-  max-height: 210px;
+  display: flex;
+  flex-wrap: wrap;
+  /* essa propriedade faz com que tenha quebra de linha quando as divs chegarem a largura máxima do elemento pai. */
+}
+
+#pixel-board-small {
+  margin-top: 20px;
+  max-width: 210px;
+  display: flex;
+  flex-wrap: wrap;
+  /* essa propriedade faz com que tenha quebra de linha quando as divs chegarem a largura máxima do elemento pai. */
+}
+
+#pixel-board-medium {
+  margin-top: 20px;
+  max-width: 210px;
+  display: flex;
+  flex-wrap: wrap;
+  /* essa propriedade faz com que tenha quebra de linha quando as divs chegarem a largura máxima do elemento pai. */
+}
+
+#pixel-board-large {
+  margin-top: 20px;
+  max-width: 530px;
   display: flex;
   flex-wrap: wrap;
   /* essa propriedade faz com que tenha quebra de linha quando as divs chegarem a largura máxima do elemento pai. */
@@ -75,10 +100,8 @@ main {
   color: rgb(255, 255, 255);
 }
 
-#clear-board {
-  margin-top: 20px;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bolder;
+.btn, #board-size {
+  padding: 4px 2px 4px;
 }
 
 footer {

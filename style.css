@@ -1,15 +1,24 @@
-/* body {
+* {
+  margin: 0;
+}
+
+body {
   background: rgba(0, 0, 0, 0.833) url(https://www.pixelstalk.net/wp-content/uploads/2016/04/Simple-wallpapers-HD-for-desktop.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: darken;
-} */
+}
+
+#title {
+  color: rgb(255, 255, 255);
+}
 
 main {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 2%;
 }
 
 #black {
@@ -70,4 +79,16 @@ main {
   margin-top: 20px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bolder;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.655);
+  color: rgb(148, 148, 148);
+  width: 100%;
+  padding: 6px 0px 6px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
 }

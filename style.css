@@ -59,15 +59,7 @@ main {
 
 #pixel-board {
   margin-top: 20px;
-  max-width: 210px;
-  display: flex;
-  flex-wrap: wrap;
-  /* essa propriedade faz com que tenha quebra de linha quando as divs chegarem a largura máxima do elemento pai. */
-}
-
-#pixel-board-small {
-  margin-top: 20px;
-  max-width: 210px;
+  width: 210px;
   display: flex;
   flex-wrap: wrap;
   /* essa propriedade faz com que tenha quebra de linha quando as divs chegarem a largura máxima do elemento pai. */
@@ -75,23 +67,35 @@ main {
 
 #pixel-board-medium {
   margin-top: 20px;
-  max-width: 210px;
+  max-width: 370px;
   display: flex;
   flex-wrap: wrap;
-  /* essa propriedade faz com que tenha quebra de linha quando as divs chegarem a largura máxima do elemento pai. */
 }
 
 #pixel-board-large {
   margin-top: 20px;
-  max-width: 530px;
+  max-width: 470px;
   display: flex;
   flex-wrap: wrap;
-  /* essa propriedade faz com que tenha quebra de linha quando as divs chegarem a largura máxima do elemento pai. */
+}
+
+#pixel-board-xlarge {
+  margin-top: 20px;
+  max-width: 681px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .pixel {
   width: 40px;
   height: 40px;
+  background-color: rgb(255, 255, 255);
+  border: rgb(0, 0, 0) solid 1px;
+}
+
+.pixelFor50 {
+  width: 9px;
+  height: 9px;
   background-color: rgb(255, 255, 255);
   border: rgb(0, 0, 0) solid 1px;
 }

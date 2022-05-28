@@ -1,6 +1,7 @@
 function createPixels(quantity) { // cria o quadro de pixels
-  const wayToBoard = document.getElementById('pixel-board');
-  let sum = quantity * quantity
+  //const wayToBoard = document.getElementById('pixel-board');
+  const wayToBoard = document.getElementsByTagName('section')[2];
+  const sum = quantity * quantity
 
   for (let i = 0; i < sum; i += 1) {
     const createDiv = document.createElement('div');
@@ -63,7 +64,7 @@ colorSelected();
 //-----------------------------------------------------------------------------
 
 function fillPixel() { // preenche os pixels com a cor selecionada
-  const wayToDivs = document.querySelectorAll('.pixel');
+  const wayToDivs = document.querySelectorAll('div');
 
   function color(event) {
     event.target.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
@@ -79,7 +80,7 @@ fillPixel();
 
 function clearBoard() {
   const wayToButton = document.querySelector('#clear-board');
-  const wayToDivs = document.querySelectorAll('.pixel');
+  const wayToDivs = document.querySelectorAll('div');
 
   wayToButton.addEventListener('click', function test() {
     for (let div of wayToDivs) {
@@ -99,38 +100,84 @@ function deletePixels() { // deleta o quadro de pixels inicial
 	}
 }
 
-function whidthBoard () {
+function whidthBoard() { // define um tamanho para o board
 	const wayToBoard = document.getElementsByTagName('section')[2];
-	const wayToDivs = document.querySelectorAll('.pixel');
-	wayToBoard.setAttribute('id', 'pixel-board-large')
+	let wayToInput = document.querySelector('#board-size');
+	let value = wayToInput.value;
+
+	if (value <= 5) {
+		wayToBoard.setAttribute('id', 'pixel-board');
+	} else if (value > 5 && value <= 8) {
+		wayToBoard.setAttribute('id', 'pixel-board-medium');
+	} else if (value > 8 && value <= 11) {
+		wayToBoard.setAttribute('id', 'pixel-board-large');
+	} else if (value >= 50) {
+		wayToBoard.setAttribute('id', 'pixel-board-xlarge');
+	}
 }
 
+function reducePixelSize() {
+	const wayToDivs = document.querySelectorAll('div');
 
-function valueInput() {
+	for (let div of wayToDivs) {
+		div.classList.remove('pixel');
+		div.classList.add('pixelFor50');
+	}
+}
+
+function increasePixelSize() {
+	const wayToDivs = document.querySelectorAll('div');
+
+	for (let div of wayToDivs) {
+		div.classList.remove('pixelFor50');
+		div.classList.add('pixel');
+	}
+}
+
+function valueInput() { // recebe o valor do input e executa as funções necessárias.
 	let wayToInput = document.querySelector('#board-size');
-	let wayToBtn = document.querySelector('#generate-board')
+	let wayToBtn = document.querySelector('#generate-board');
 
-	function answer() {
-		const wayToInput = document.querySelector('#board-size');
+	function createAlert() {
+		let wayToInput = document.querySelector('#board-size');
 		let value = wayToInput.value;
 		
-		if (value == 0 || value > 12) {
+		if (value == 0 || value > 50) {
 			alert('Board inválido!');
 		}
 	}
 
 	function eventBtn(event) { // reage ao click do btn vqv
 		let value = wayToInput.value;
-		deletePixels();
-		createPixels(value);
-		fillPixel();
-		clearBoard();
-		answer()
+
+		if (value < 5) {
+			createAlert();
+			deletePixels();
+			createPixels(5);
+		} else if (value >= 50) {
+			createAlert();
+			deletePixels();
+			createPixels(50);
+			// reducePixelSize();
+			// fillPixel();
+			// clearBoard();
+			// whidthBoard()
+		} else {
+			deletePixels();
+			createPixels(value);
+			increasePixelSize()
+			fillPixel();
+			clearBoard();
+			whidthBoard()
+			
+		}
+			
 	}
 
 	wayToBtn.addEventListener('click', eventBtn);
 }
 	
 valueInput()
+
 
 

@@ -79,12 +79,12 @@ main {
   flex-wrap: wrap;
 }
 
-#pixel-board-xlarge {
+/* #pixel-board-xlarge {
   margin-top: 20px;
   max-width: 681px;
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 .pixel {
   width: 40px;
@@ -93,12 +93,12 @@ main {
   border: rgb(0, 0, 0) solid 1px;
 }
 
-.pixelFor50 {
+/* .pixelFor50 {
   width: 9px;
   height: 9px;
   background-color: rgb(255, 255, 255);
   border: rgb(0, 0, 0) solid 1px;
-}
+} */
 
 .selected {
   color: rgb(255, 255, 255);
